@@ -68,8 +68,6 @@ class SnakeGameClass:
                 self.score += 1
                
 
-
-
             #Draw Snake
             if self.points:
                 for i,point in enumerate(self.points):
@@ -89,7 +87,6 @@ class SnakeGameClass:
             cv2.polylines(imgMain, [pts],False,(0,200,0), 3)
             mindistance = cv2.pointPolygonTest(pts,(cx,cy),True)
            
-
             if -1 < mindistance <=1:
                 self.gameOver = True
                 self.points = [] #list of all points of the snake
@@ -112,7 +109,6 @@ while True:
         lmList = hands[0]['lmList']
         pointIndex = lmList[8][0:2]
         img = game.update(img,pointIndex)
-
 
     cv2.imshow('Image', img)
     key = cv2.waitKey(1)
